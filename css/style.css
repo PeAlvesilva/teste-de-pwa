@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+  }
+  
+  header {
+    background-color: #2196f3;
+    color: white;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 16px;
+    min-height: calc(100vh - 112px); /* espaço para nav e header */
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #2196f3;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
