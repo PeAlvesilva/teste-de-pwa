@@ -4,8 +4,8 @@
     "description": "Um exemplo de Progressive Web App",
     "start_url": "./index.html",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#2196f3",
+    "background_color": "#5444b6",
+    "theme_color": "#fb4023",
     "icons": [
       {
         "src": "icons/icon-192.png",

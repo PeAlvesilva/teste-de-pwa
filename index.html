@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#2196f3" />
+  <meta name="theme-color" content="#81ba37" />
   <title>Meu PWA</title>
   <link rel="manifest" href="./manifest.json" />
   <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
@@ -27,18 +27,8 @@
 
 
   <!-- Registro do Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(reg => console.log('Service Worker registrado:', reg.scope))
-          .catch(err => console.error('Erro ao registrar o Service Worker:', err));
-      });
-    }
+  <script src="sw-log.js"></script>
 
-    document.getElementById('botao').addEventListener('click', () => {
-      alert('Você clicou no botão!');
-    });
-  </script>
+  
 </body>
 </html>
