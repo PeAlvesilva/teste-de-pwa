@@ -14,6 +14,8 @@
     <h1>Meu App</h1>
   </header>
 
+  <button id="installBtn" style="display:none;">Instalar app</button>
+
   <main>
     <p>Este é um Progressive Web App (PWA) simples!</p>
     <button id="botao">Clique aqui</button>
@@ -29,6 +31,33 @@
   <!-- Registro do Service Worker -->
   <script src="sw-log.js"></script>
 
+  <script>
+    let deferredPrompt;
+  
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Impede o prompt automático
+      e.preventDefault();
+      // Salva o evento para usar depois
+      deferredPrompt = e;
+  
+      // Mostra o botão de instalar
+      const installBtn = document.getElementById('installBtn');
+      installBtn.style.display = 'block';
+  
+      installBtn.addEventListener('click', async () => {
+        installBtn.style.display = 'none'; // Oculta o botão
+        deferredPrompt.prompt(); // Mostra o prompt de instalação
+  
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('Usuário aceitou instalar');
+        } else {
+          console.log('Usuário recusou instalar');
+        }
+        deferredPrompt = null; // Limpa a referência
+      });
+    });
+  </script>
   
 </body>
 </html>
